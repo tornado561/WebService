@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="pokazWszystko">
+        <s:complexType />
+      </s:element>
+      <s:element name="pokazWszystkoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pokazWszystkoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="szukajPrzedmiot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="kategoria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nazwa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="szukajPrzedmiotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="szukajPrzedmiotResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="szukajKategorie">
+        <s:complexType />
+      </s:element>
+      <s:element name="szukajKategorieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="szukajKategorieResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nazwisko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="opis" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="newClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="imie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nazwisko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="opis" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="imie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nazwisko" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nazwisko" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchClientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dane" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="liczba" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertRecordResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getData">
+        <s:complexType />
+      </s:element>
+      <s:element name="getDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="pokazWszystkoSoapIn">
+    <wsdl:part name="parameters" element="tns:pokazWszystko" />
+  </wsdl:message>
+  <wsdl:message name="pokazWszystkoSoapOut">
+    <wsdl:part name="parameters" element="tns:pokazWszystkoResponse" />
+  </wsdl:message>
+  <wsdl:message name="szukajPrzedmiotSoapIn">
+    <wsdl:part name="parameters" element="tns:szukajPrzedmiot" />
+  </wsdl:message>
+  <wsdl:message name="szukajPrzedmiotSoapOut">
+    <wsdl:part name="parameters" element="tns:szukajPrzedmiotResponse" />
+  </wsdl:message>
+  <wsdl:message name="szukajKategorieSoapIn">
+    <wsdl:part name="parameters" element="tns:szukajKategorie" />
+  </wsdl:message>
+  <wsdl:message name="szukajKategorieSoapOut">
+    <wsdl:part name="parameters" element="tns:szukajKategorieResponse" />
+  </wsdl:message>
+  <wsdl:message name="newClientSoapIn">
+    <wsdl:part name="parameters" element="tns:newClient" />
+  </wsdl:message>
+  <wsdl:message name="newClientSoapOut">
+    <wsdl:part name="parameters" element="tns:newClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateClientSoapIn">
+    <wsdl:part name="parameters" element="tns:updateClient" />
+  </wsdl:message>
+  <wsdl:message name="updateClientSoapOut">
+    <wsdl:part name="parameters" element="tns:updateClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteClient" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchClientSoapIn">
+    <wsdl:part name="parameters" element="tns:searchClient" />
+  </wsdl:message>
+  <wsdl:message name="searchClientSoapOut">
+    <wsdl:part name="parameters" element="tns:searchClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:insertRecord" />
+  </wsdl:message>
+  <wsdl:message name="insertRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:insertRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getData" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="pokazWszystko">
+      <wsdl:input message="tns:pokazWszystkoSoapIn" />
+      <wsdl:output message="tns:pokazWszystkoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="szukajPrzedmiot">
+      <wsdl:input message="tns:szukajPrzedmiotSoapIn" />
+      <wsdl:output message="tns:szukajPrzedmiotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="szukajKategorie">
+      <wsdl:input message="tns:szukajKategorieSoapIn" />
+      <wsdl:output message="tns:szukajKategorieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newClient">
+      <wsdl:input message="tns:newClientSoapIn" />
+      <wsdl:output message="tns:newClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <wsdl:input message="tns:updateClientSoapIn" />
+      <wsdl:output message="tns:updateClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <wsdl:input message="tns:deleteClientSoapIn" />
+      <wsdl:output message="tns:deleteClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchClient">
+      <wsdl:input message="tns:searchClientSoapIn" />
+      <wsdl:output message="tns:searchClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertRecord">
+      <wsdl:input message="tns:insertRecordSoapIn" />
+      <wsdl:output message="tns:insertRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:getDataSoapIn" />
+      <wsdl:output message="tns:getDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="pokazWszystko">
+      <soap:operation soapAction="http://tempuri.org/pokazWszystko" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="szukajPrzedmiot">
+      <soap:operation soapAction="http://tempuri.org/szukajPrzedmiot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="szukajKategorie">
+      <soap:operation soapAction="http://tempuri.org/szukajKategorie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newClient">
+      <soap:operation soapAction="http://tempuri.org/newClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap:operation soapAction="http://tempuri.org/updateClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap:operation soapAction="http://tempuri.org/deleteClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchClient">
+      <soap:operation soapAction="http://tempuri.org/searchClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertRecord">
+      <soap:operation soapAction="http://tempuri.org/insertRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="pokazWszystko">
+      <soap12:operation soapAction="http://tempuri.org/pokazWszystko" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="szukajPrzedmiot">
+      <soap12:operation soapAction="http://tempuri.org/szukajPrzedmiot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="szukajKategorie">
+      <soap12:operation soapAction="http://tempuri.org/szukajKategorie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newClient">
+      <soap12:operation soapAction="http://tempuri.org/newClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap12:operation soapAction="http://tempuri.org/updateClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap12:operation soapAction="http://tempuri.org/deleteClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchClient">
+      <soap12:operation soapAction="http://tempuri.org/searchClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertRecord">
+      <soap12:operation soapAction="http://tempuri.org/insertRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap12:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="https://localhost:44349/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="https://localhost:44349/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
